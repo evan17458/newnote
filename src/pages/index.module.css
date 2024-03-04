@@ -62,25 +62,25 @@
   }
 }
 .downcontainer {
-  height: 50%;
+  /* height: 50%; */
 
   @media (min-width: 1024px) {
     height: 100%;
     width: 50%;
   }
-  margin: auto;
+  /* margin: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
-.test2 {
+/* .test2 {
   font-size: 1.25rem;
-}
+} */
 .text {
-  font-size: 2.25rem;
-  font-weight: bold;
+  /* font-size: 2.25rem;
+  font-weight: bold; */
 
   @media (min-width: 768px) {
     font-size: 3.75rem;

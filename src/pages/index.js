@@ -52,20 +52,20 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          <h1 className={styles.text}>打造數位體驗，設計明天。</h1>
+          <h1
+            style={{
+              fontSize: "2.25rem",
+              fontWeight: "bold",
+            }}
+          >
+            打造數位體驗，設計明天。
+          </h1>
 
-          <p className={styles.test2}>
+          <p style={{ fontSize: "1.25rem" }}>
             歡迎來到我的數位畫布，這裡有創新和創造力 收斂。
             憑藉對美學的敏銳洞察力和對程式碼的掌握，我的
             作品集展示了反映我的多樣化項目集合 追求卓越的承諾。
           </p>
-          {/* BUTTONS */}
-          {/* <div className="w-full flex gap-4">
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
-              查看我的工作
-            </button>
-            <button className="p-4 rounded-lg ring-1 ring-black">聯絡我</button>
-          </div> */}
         </div>
       </div>
       {/* <HomepageHeader />
