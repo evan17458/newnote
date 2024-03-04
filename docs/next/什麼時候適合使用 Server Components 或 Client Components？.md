@@ -46,4 +46,4 @@ Server Components 無法使用 props、state、event listeners (ex: onClick(), o
 
 App Router 中，Next 預設所有 components 都是 **Server Components**，假如想轉為 **Client Components**，只需要在檔案最上方加入一段 **'use client'**：
 
-![](../static/img/next001.jpg)
+![](../../static/img/next001.jpg)
