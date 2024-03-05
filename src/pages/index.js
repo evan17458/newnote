@@ -38,7 +38,7 @@ export default function Home() {
     >
       <div className={styles.containerFlex}>
         <div className={styles.topcontainer}>
-          <img src="/img/hero.png" />
+          <img className={styles.heroimg} src="/img/hero.png" />
         </div>
 
         <div
@@ -52,20 +52,13 @@ export default function Home() {
             justifyContent: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "2.25rem",
-              fontWeight: "bold",
-            }}
-          >
-            打造數位體驗，設計明天。
-          </h1>
+          <div className={styles.text2}>打造數位體驗，設計明天。</div>
 
-          <p style={{ fontSize: "1.25rem" }}>
+          <div className={styles.text}>
             歡迎來到我的數位畫布，這裡有創新和創造力 收斂。
             憑藉對美學的敏銳洞察力和對程式碼的掌握，我的
             作品集展示了反映我的多樣化項目集合 追求卓越的承諾。
-          </p>
+          </div>
         </div>
       </div>
       {/* <HomepageHeader />
