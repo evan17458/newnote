@@ -41,17 +41,7 @@ export default function Home() {
           <img className={styles.heroimg} src="/img/hero.png" />
         </div>
 
-        <div
-          style={{
-            height: "50%",
-            margin: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "2rem",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <div className={styles.downcontainer}>
           <div className={styles.text2}>打造數位體驗，設計明天。</div>
 
           <div className={styles.text}>
