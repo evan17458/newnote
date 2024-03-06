@@ -2,19 +2,18 @@
 
 ## 為什麼要用 NextAuth.js?
 
-- **簡化了認證流程** - NextAuth.js 抽象化並簡化了複雜的認證邏輯,讓你可以輕鬆地將許多流行的認證提供者(如 Google、Facebook 等)整合到你的應用中。
-- **自動處理 session 和 token** - NextAuth.js 會自動處理 session 和 JWT token 的生成、更新和驗證。這簡化了認證相關的狀態管理。
-- **支援多種認證提供者** - NextAuth.js 支援數十個主要認證提供者,你可以輕鬆地同時使用多個提供者。
-- **方便擴充和自定義** - NextAuth.js 提供了擴充接口和 hook,讓你可以根據需要自定義認證流程的各個部分。
-- **良好的開發人員體驗** - NextAuth.js 提供了詳細的文件和示例,並且 API 設計簡單明瞭,可以加快開發速度。
-- **開源免費** - NextAuth.js 是在 MIT 許可下發布的開源軟件,可以免費使用。
-  總的來說,NextAuth.js 可以幫助你快速搭建安全可靠的認證系統,提高開發效率,值得推薦。
+- **簡化了認證流程** - 抽象化並簡化了複雜的認證邏輯,可以輕鬆地將許多的認證提供者(如 Google、Facebook 等)整合到你的應用中。
+- **自動處理 session 和 token** - 自動處理 session 和 JWT token 的生成、更新和驗證。這簡化了認證相關的狀態管理。
+- **支援多種認證提供者** - 支援`數十個主要認證提供者`,你可以輕鬆地同時使用多個提供者。
+- **方便擴充和自定義** - 提供了擴充接口和 hook,讓你可以根據需要自定義認證流程的各個部分。
+- **良好的開發人員體驗** - 提供了詳細的文件和示例,並且 API 設計簡單明瞭,可以加快開發速度。
+- **開源免費** - 在 MIT 許可下發布的開源軟件,可以免費使用。
 
 ## 設置方法
 
 ---
 
-NextAuth.js 的設置全部都在 API route 的 [...nextauth].js 檔案中，設置的方法很簡單，以下我們從安裝開始，一步一步來操作吧!
+NextAuth.js 的設置全部都在 API route 的 `[...nextauth].js` 檔案中
 
 ## 安裝
 
@@ -24,13 +23,13 @@ NextAuth.js 的設置全部都在 API route 的 [...nextauth].js 檔案中，設
 
 ## 設置 API route
 
-因應 Next.js 升級後 app route 以 Route Handler 作為 API 設置的方法，目前 NextAuth.js 也支援 page route 及 app route 兩種設置方法。兩個設置內容都相同，只是最後 export 的方法有些不一樣~
+因應 Next.js 升級後 app route 以 `Route Handler` 作為 API 設置的方法，目前 NextAuth.js 也支援 page route 及 app route 兩種設置方法。兩個設置內容都相同，只是最後 `export` 的方法有些不一樣~
 
 ## Page Route
 
 在 pages/api/auth 中建立 [...nextauth].js 檔案
 
-- 定義一個 authOptions 的物件，型別為 AuthOptions
+- 定義一個 authOptions 的物件，型別為 `AuthOptions`
 - 物件中會有些基本設置，例如 providers、pages、session、secret 等等
 - 最後調用 NextAuth ，並 export NextAuth(authOptions) 即完成
 
@@ -45,9 +44,9 @@ export const authOptions: AuthOptions = {
 export default NextAuth(authOptions)
 ```
 
-## App Route
+## App Rout
 
-在 app/api/auth/[...nextauth] 中建立 route.js 檔案
+在 app/api/auth/[...nextauth] 中建立 `route.js` 檔案
 
 - 一樣設置型別為 AuthOptions 的 authOptions 的物件
 - 開始設置內容
@@ -75,7 +74,7 @@ export { handler as GET, handler as POST }
 
 ## adapter
 
-可作為與資料庫連接的橋樑，負責建立和保存用戶的身份驗證數據，除了 MongoDB、MySQL、PostgreSQL 也支援 Prisma ! 由於我的專案是以 Prisma 建置，以下就以 Prisma 為例
+可作為與`資料庫`連接的橋樑，負責`建立和保存用戶的身份驗證數據`，除了 `MongoDB、MySQL、PostgreSQL` 也支援 `Prisma` ! 由於我的專案是以 Prisma 建置，以下就以 `Prisma`為例
 
 - 安裝 @auth/prisma-adapter
 
@@ -83,7 +82,7 @@ export { handler as GET, handler as POST }
    npm install @auth/prisma-adapter
 ```
 
-- 在 options 中設定 adapter，引入 prisma client 後，將其設置於 PrismaAdapter 中
+- 在 options 中設定 adapter，引入 `prisma client` 後，將其設置於 PrismaAdapter 中
 
 ```jsx title=""
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
@@ -96,13 +95,13 @@ export const authOptions = {
 
 ## provider
 
-必填欄位，設定登入驗證的 providers，可設定多組如：Google, Facebook, Twitter, GitHub, Email 等等 provider，主要分為 OAuth、Email 及 Credentials 三種驗證方式
+必填欄位，設定登入驗證的 `providers`，可設定多組如：Google, Facebook, Twitter, GitHub, Email 等等 provider，主要分為 `OAuth`、`Email` 及 `Credential`s 三種驗證方式
 
 ## OAuth
 
-第三方驗證，主要設置該種類的 clientId 和 clientSecret
+第三方驗證，主要設置該種類的 `clientId` 和 `clientSecret`
 
-先引入欲設定的 OAuth Provider 後，於該服務取得 ID 及金鑰後再於環境變數中設定並引用
+先引入欲設定的 OAuth Provider 後，於該服務取得 ID 及金鑰後再於`環境變數`中設定並引用
 
 ```jsx title=""
 Provider({
@@ -113,7 +112,7 @@ Provider({
 
 ## Credentials
 
-使用自定義的 Username / Email 和 Password 等憑證進行身份驗證，可連接至 db 設定權限
+使用自定義的 `Username` / `Email` 和 `Password` 等憑證進行身份驗證，可連接至 `db` 設定權限
 
 - name：用來定義在登錄表單上如何顯示這種認證方法
 
@@ -121,7 +120,7 @@ Provider({
 
 - credentials：定義和描述應該在登錄表單上出現的欄位，當用戶提交這些欄位的值時的驗證型別。
 
-- authorize：檢查提交的 Username / Email 和 Password 是否與存儲在資料庫中的數據相符，當用戶提交憑證嘗試登錄時，`authorize` 會被調用。
+- authorize：檢查提交的 `Username` / `Email` 和 `Password` 是否與存儲在資料庫中的數據相符，當用戶提交憑證嘗試登錄時，`authorize` 會被調用。
 
 ```jsx title=""
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -160,7 +159,7 @@ providers: [
 
 ## pages
 
-代表 NextAuth.js 提供各種驗證方法的路徑位置，自定義身份驗證和授權過程中不同頁面的路徑
+代表 NextAuth.js 提供各種驗證方法的路徑位置，自定義身份`驗證`和`授權`過程中不同頁面的路徑
 
 ```jsx title=""
 pages: {
@@ -193,7 +192,7 @@ secret: process.env.NEXTAUTH_SECRET;
 
 ## debug
 
-當設定為 `true` 時，`NextAuth` 會在 terminal 輸出 log 及資訊，建議僅在開發環境中開啟。
+當設定為 `true` 時，`NextAuth` 會在 terminal 輸出 log 及資訊，建議僅在`開發`環境中開啟。
 
 ```jsx title=""
 debug: process.env.NODE_ENV === 'development',
@@ -203,8 +202,8 @@ debug: process.env.NODE_ENV === 'development',
 
 主要用於 JWT 本身設定
 
-- maxAge: 這是 JWT 的最大有效期。這意味著，當 JWT 過期後，它將不再有效，並且用戶需要重新獲取新的 JWT。
-- encode 和 decode: 自定義函數，可以對 JWT 的內容進行加密和解密。
+- `maxAge`: 這是 `JWT` 的最大有效期。這意味著，當 JWT 過期後，它將不再有效，並且用戶需要重新獲取新的 JWT。
+- `encode` 和 `decode`: 自定義函數，可以對 JWT 的內容進行加密和解密。
 
 ```jsx title=""
   jwt: {
