@@ -39,3 +39,9 @@ https://mynextstydywork.vercel.app/
 - [使用 react-hook-form 進行客戶端表單驗證和處理](/docs/react/React-Hook-Form%20%E6%95%99%E5%AD%B8)
 
 - [prisma](/docs/prisma%20教學)
+
+- [API Router](/docs/next/Route%20Handler)
+
+- [Zustand](/docs/react/Zustand%20教學)
+
+- [MongoDB Atlas](/docs/MongoDB%20Atlas)

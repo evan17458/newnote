@@ -1,8 +1,8 @@
 ## Route Handler
 
-Route Handler 等同 Pages Router 中的 API Router，顧名思義，我們可以將路由定義成 API endpoint，來處理 HTTP request 和 response。
+`Route Handler` 等同 `Pages Router` 中的 `API Router`，顧名思義，我們可以將路由定義成 `API endpoint`，來處理 HTTP `request` 和 `response`。
 
-要如何創建 route handler 呢？
+要如何創建 `route handler` 呢？
 
 我們只需要在 **`/app`** 中的資料夾，建一個 **`route.ts/js`** 即可，路由定義的模式跟 **`page.tsx**` 相同，也可以使用巢狀、動態路由。
 
@@ -47,6 +47,6 @@ export function GET() {
 }
 ```
 
-了可使用 Fetch API 原生的 Request 和 Response 物件外，
+除了可使用 Fetch API 原生的 `Request` 和 `Response` 物件外，
 
-Next 也有擴充兩者，開發一個 methods 更多的物件 - **`/NextRequest`** 和 **`/NextResponse`**
+`Next` 也有擴充兩者，開發一個 methods 更多的物件 - **`/NextRequest`** 和 **`/NextResponse`**
