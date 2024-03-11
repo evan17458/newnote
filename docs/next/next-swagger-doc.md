@@ -15,6 +15,12 @@ This package reads your `JSDoc-annotated source code` on `NextJS API route` and 
 
 ```jsx title=""
 npm install next-swagger-doc
+
+npm install swagger-ui-react
+npm i --save-dev @types/swagger-ui-react
+
+Try `npm i --save-dev @types/swagger-ui-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'swagger-ui-react';
+
 ```
 
 ## next-swagger-doc 與 Next.js 13

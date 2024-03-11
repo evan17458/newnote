@@ -37,9 +37,7 @@ export default function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <div className={styles.containerFlex}>
-        <div className={styles.topcontainer}>
-          <img className={styles.heroimg} src="/img/hero.png" />
-        </div>
+        <img className={styles.heroimg} src="/img/hero.png" />
 
         <div className={styles.downcontainer}>
           <div className={styles.text2}>打造數位體驗，設計明天。</div>
